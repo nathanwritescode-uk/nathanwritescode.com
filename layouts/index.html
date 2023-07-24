@@ -1,0 +1,99 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+
+{{ if .Params.lead.enabled }}
+<div class="strip">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-10 ">
+                <div class="intro">
+                    {{ partial "components/lead.html" .Params.lead }}
+                    {{ if .Params.lead.show_social_media_icons }}
+                    {{ partial "components/social.html" . }}
+                    {{ end }}
+                    {{ if .Params.lead.buttons }}
+                    <div class="buttons">
+                        {{ range .Params.lead.buttons }}
+                        {{ partial "components/status.html" . }}
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ if .Params.tools.enabled }}
+<div class="strip">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-10 ">
+                <div class="cta">
+                    {{ partial "components/skills_tools.html" .Params.tools }}
+
+                    {{ if .Params.tools.buttons }}
+                    <div class="buttons">
+                        {{ range .Params.tools.buttons }}
+                        {{ partial "components/button.html" . }}
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div class="cta-footer">
+                        {{ $email := printf "%s%s" "mailto:" .Params.tools.email }}
+                        <a class="cta-email" href="{{ $email }}">{{ .Params.tools.email }}</a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ if .Params.work.enabled }}
+{{ $section := $.Site.GetPage "section" "work" }}
+{{ $pages := where $.Site.RegularPages "Type" "work" }}
+{{ $limit := .Params.work.limit | default 12 }}
+{{ if gt (len $pages) 0 }}
+<div class="strip">
+    <div class="container">
+        <div class="strip-heading pb-2">
+            {{ if .Params.work.heading }}<h2>{{ .Params.work.heading }}</h2>{{ end }}
+            {{ if .Params.work.show_view_all }}
+            <a href="{{ $section.Permalink | relURL }}">{{ i18n "view_all" }}</a>
+            {{ end }}
+        </div>
+        <div class="row">
+            {{ range first $limit $pages }}
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                {{ .Render "summary" }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ end }}
+
+{{ if .Params.footer.enabled }}
+<div class="strip">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-10 ">
+                <div class="cta">
+                    <div class="cta-footer">
+                        {{ $email := printf "%s%s" "mailto:" .Params.footer.email }}
+                        <a class="cta-email" href="{{ $email }}">{{ .Params.footer.email }}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ end }}
