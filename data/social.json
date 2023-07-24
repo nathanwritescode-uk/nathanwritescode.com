@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Github",
+    "fa_icon": "fab fa-github",
+    "url": "https://github.com/nathanwritescode-uk"
+  },
+  {
+    "title": "LinkedIn",
+    "fa_icon": "fab fa-linkedin",
+    "url": "https://www.linkedin.com/in/nathanwritescode/"
+  }
+]
