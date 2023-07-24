@@ -15,5 +15,4 @@ hugo.linux
 # Other
 .DS_Store
 node_modules
-dist
-tmp
+.idea
