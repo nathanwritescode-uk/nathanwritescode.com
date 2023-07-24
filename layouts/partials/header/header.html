@@ -1,0 +1,23 @@
+<div id="header" class="header {{ if .Site.Params.header.enable_fixed_header }}header-fixed{{ end }}">
+
+    <div class="header-main">
+        <div class="container">
+
+            {{ partial "header/logo.html" . }}
+            {{ if .Site.Menus.main }}
+                {{ partial "menu/menu-main.html" . }}
+                {{ partial "header/hamburger.html" . }}
+            {{ end }}
+            
+            {{ if ne .Site.Params.dark_mode.enable_dark_mode false }}
+            {{ if .Site.Params.dark_mode.show_dark_mode_toggle_in_header }}
+            <div class="d-none d-md-block">
+                {{ partial "components/dark-mode-switcher.html" . }}
+            </div>
+            {{ end }}
+            {{ end }}
+        
+        </div>
+    </div>
+
+</div>
