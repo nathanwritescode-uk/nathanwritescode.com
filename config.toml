@@ -44,14 +44,12 @@ metaDataFormat = "yaml"
 
   [params.logo]
     logo_text = "NathanWritesCode"
-    show_logo_text_on_desktop = true
-    show_logo_text_on_mobile = true
-    show_logo_image_on_desktop = false
-    show_logo_image_on_mobile = false
+    show_logo_image_on_desktop = true
+    show_logo_image_on_mobile = true
     logo_image_desktop = "images/logo/logo.svg"
-    logo_image_desktop_invert = "images/logo/logo-invert.svg"
-    logo_image_desktop_width = 32
-    logo_image_desktop_height = 32
+    logo_image_desktop_invert = "images/logo/logo_inverted.svg"
+    logo_image_desktop_width = 260
+    logo_image_desktop_height = 60
     logo_image_mobile = "images/logo/logo-mobile.svg"
     logo_image_mobile_invert = "images/logo/logo-invert-mobile.svg"
     logo_image_mobile_width = 32
