@@ -1,6 +1,6 @@
-{{ if .Site.Data.social }}
+{{ if site.Data.social }}
 <div class="social">
-  {{ range .Site.Data.social }}
+  {{ range site.Data.social }}
     <a href="{{ .url }}" target="blank" title="{{ .title }}">
       <i class="{{ .fa_icon }}" ></i>
     </a>
