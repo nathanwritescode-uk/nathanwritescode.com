@@ -1,13 +1,8 @@
-[build]
-publish = "public"
-command = "hugo --gc --minify"
-
 [context.production.environment]
-  HUGO_VERSION = "0.115.4"
-  HUGO_GOOGLE_ANALYTICS_ID = "G-1X61G0K9F1"
+  HUGO_VERSION = "0.134.2"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.115.4"
+  HUGO_VERSION = "0.134.2"
 
 [context.branch-deploy.environment]
-  HUGO_VERSION = "0.115.4"
+  HUGO_VERSION = "0.134.2"
